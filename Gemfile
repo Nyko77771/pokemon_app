@@ -8,6 +8,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+# Imported GEMs
 gem "bootstrap", "~> 5.3.3"
 gem "sassc-rails"
 gem "sprockets-rails", "~> 3.4"

@@ -8,14 +8,17 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+#Nykyta McDonald - addition
 # Imported GEMs
 gem "bootstrap", "~> 5.3.3"
 gem "sassc-rails"
-gem "sprockets-rails", "~> 3.4"
 gem "jquery-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+
+#Nykyta McDonald - addition
+# Using bcrypt for password hashing
+gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable

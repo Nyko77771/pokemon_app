@@ -8,11 +8,18 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+
 #Nykyta McDonald - addition
 # Imported GEMs
+# Using Bootstrap for styling
 gem "bootstrap", "~> 5.3.3"
+# Using sassc-rails for Sass support
 gem "sassc-rails"
+# Using jquery-rails for jQuery support
 gem "jquery-rails"
+
+# Importing dotenv for API key management
+gem "dotenv-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 

@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
 # Nykyta McDonald - addition
   # My Routes
-get 'signup', to: 'user#new'
+root 'users#index'
+
+get 'signin', to: 'users#signin'
+get 'signup', to: 'users#signup'
+
 resources :users
 
 

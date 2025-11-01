@@ -1,1 +1,51 @@
 @import "bootstrap";
+
+#signUp {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.middleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.subForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actions input {
+  border-radius: 20px;
+  border-style: none;
+  margin-top: 10px;
+  font-size: large;
+  background-color: lavender;
+  padding : 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn_cancel {
+  background-color: lavender;
+  padding : 10px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-style: none;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+

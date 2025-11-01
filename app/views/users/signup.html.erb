@@ -1,0 +1,30 @@
+<div class="middleBox">
+  <h1 id="signUp">Sign Up</h1>
+
+  <%= form_for(@user) do |f| %>
+    <div class="subForm">
+      <div class="field">
+        <%=f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+
+      <div class="field">
+        <%=f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+
+      <div class="field">
+        <%=f.email_field :email, placeholder: "Email" %>
+      </div>
+
+      <div class="field">
+        <%=f.password_field :password, placeholder: "Password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create Account" %>
+
+        <%= link_to "Cancel", root_path, class: "btn_cancel" %>
+      </div>
+
+    </div>
+</div>
+<% end %>

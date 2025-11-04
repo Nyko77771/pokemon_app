@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+  get "home/index"
+  get "home/404_page"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 # Nykyta McDonald - addition
   # My Routes
-root 'users#index'
+root 'home#index'
+match '*path', to: 'home#page_404', via: :all
 
 get 'signin', to: 'users#signin'
 get 'signup', to: 'users#signup'
 
 resources :users
 
+resources :lists, only: [:index, :show, :create, :destroy]
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

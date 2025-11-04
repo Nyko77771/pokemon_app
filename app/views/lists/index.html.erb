@@ -1,0 +1,15 @@
+<h1> View Lists </h1>
+
+<%= button_to "See Your Lists", lists_path, method: :get %>
+
+<% if !@lists.empty? %>
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+      <%=  list.name %>
+      </li>
+      <li>
+        <%= button_to "View List", list_path(list), method: :get %>
+      </li>
+    <% end %>
+  </ul>

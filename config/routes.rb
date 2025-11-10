@@ -6,15 +6,18 @@ Rails.application.routes.draw do
 # Nykyta McDonald - addition
   # My Routes
 root 'home#index'
-match '*path', to: 'home#page_404', via: :all
-
-get 'signin', to: 'users#signin'
-get 'signup', to: 'users#signup'
+get 'about', to: 'home#about'
 
 resources :users
+get 'signup', to: 'users#signup'
+
+get 'login', to: 'sessions#login'
+post 'login', to: 'sessions#create'
+get 'logout', to: 'sessions#destroy', as: :logout
 
 resources :lists, only: [:index, :show, :create, :destroy]
 
+match '*path', to: 'home#page_404', via: :all
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

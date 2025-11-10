@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
-    
+      before_action :require_user
+
     def index
         @lists = user.lists
     end

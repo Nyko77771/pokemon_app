@@ -1,11 +1,20 @@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary  border-bottom" data-bs-theme="dark">
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary border-bottom " data-bs-theme="dark">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="#">Poke Tracker</a>
+    <a class="navbar-brand">
+        <%= link_to "Poke Tracker", home_index_path, class: "nav-link titleHead", "aria-current": "page" %>
+    
+    </a>
 
-    <span class="navbar-text">
-        SignIn / SignUp
+    <span class="navbar-text ms-auto logSign">
+      <% unless current_page?(login_path) %>
+        <% if current_user%>
+          <%= link_to "Log-out", logout_path, method: :delete, class: "nav-link logText" %>
+           <% else %>
+          <%= link_to "Log-in", login_path, class: "nav-link logText" %>
+        <% end %>
+      <% end %>
     </span>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -16,7 +25,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
+        <%= link_to "Home", home_index_path, class: "nav-link", "aria-current": "page" %>
         </li>
 
         <li class="nav-item">

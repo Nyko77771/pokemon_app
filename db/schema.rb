@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_04_122515) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_04_123844) do
+  create_table "cards_in_lists", force: :cascade do |t|
+    t.integer "list_id", null: false
+    t.integer "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_cards_in_lists_on_card_id"
+    t.index ["list_id"], name: "index_cards_in_lists_on_list_id"
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
@@ -28,5 +37,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_04_122515) do
     t.string "password_digest", null: false
   end
 
+  add_foreign_key "cards_in_lists", "cards"
+  add_foreign_key "cards_in_lists", "lists"
   add_foreign_key "lists", "users"
 end

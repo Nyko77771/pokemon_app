@@ -28,9 +28,13 @@
         <%= link_to "Home", home_index_path, class: "nav-link", "aria-current": "page" %>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">List</a>
-        </li>
+        <% if current_user.nil? %>
+        <%= link_to "Signup", signup_path, class: "nav-link", "aria-current": "page" %>
+        <% end %>
+
+        <% if current_user %>
+        <%= link_to "List", lists_path, class: "nav-link", "aria-current": "page" %>
+          <% end %>
 
         <li class="nav-item">
           <a class="nav-link">About</a>

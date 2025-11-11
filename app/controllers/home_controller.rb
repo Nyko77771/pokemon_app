@@ -10,4 +10,13 @@ class HomeController < ApplicationController
   def about
   end
 
+  def faq
+  end
+
+  def results
+    api = ENV["PRICE_TRACKER_API"]
+    PokemonAPIClient.configure(api);
+    pokemon = PokemonAPIClient.fetch_card_by_name(name: params[:name])
+  end
+
 end

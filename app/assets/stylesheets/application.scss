@@ -66,6 +66,10 @@
   color: blue;
 }
 
+.notices {
+  color: red;
+}
+
 .titleHead {
   font-size: larger;
   color: rgb(238, 108, 108);
@@ -73,4 +77,72 @@
 
 .titleHead:hover {
   color: white;
+}
+
+.tableForm {
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableForm tr {
+  vertical-align: middle;
+}
+
+
+.tableForm td {
+  text-align: center;
+  margin: 0;
+}
+
+#listName {
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.listBtn {
+  border: none;
+}
+
+
+.searchForm  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.inputSearch {
+  margin-bottom: 8px;
+  border: 2px solid green;
+}
+
+.btn404 {
+  border: 2px dotted blue;
+}
+
+.btn404:hover {
+  border: 2px solid green;
+  background-color: azure;
+}
+
+.btn_signup {
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-link.logText {
+  padding-left: 15px;
+}
+.inputSearch {
+  min-width: 500px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+.inputSearch {
+  min-width: 200px;
+}
 }

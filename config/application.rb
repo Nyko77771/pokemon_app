@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../lib/my_api_gem/pokemon_price_tracker.rb"
 
 require "rails/all"
 

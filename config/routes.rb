@@ -9,7 +9,7 @@ root 'home#index'
 get 'about', to: 'home#about'
 
 resources :users
-get 'signup', to: 'users#new'
+get 'signup', to: 'users#signup'
 
 get 'login', to: 'sessions#login'
 post 'login', to: 'sessions#create'

@@ -18,8 +18,7 @@ class PokemonAPIClient
                 uri = URI("#{BASE_URL}")
                 params = {
                     search: name,
-                    set: 'temporal',
-                    limit: 5,
+                    limit: 3,
                     includeHistory: 'false'
                 }
                 uri.query = URI.encode_www_form(params)

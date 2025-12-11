@@ -1,0 +1,26 @@
+<div class="middleBox">
+
+    <div class="searchOut">
+
+    <div class="resultSearch">
+        <%= render 'home/search' %>
+    </div>
+
+    <div class="cardResult">
+        <h1> Search Results </h1>
+
+        <% if @cards.present? %>
+        
+            <% @cards.each do |card| %>
+                <div class="cardValues">
+                    <img src="<%= card['imageCdnUrl'] %>" class="searchImg">
+                    <h4><%= card['name']%></h4>
+                    <p>From Set: <%= card['setName']%> </p>
+                    <p><i>Market Price: </i><%= card['prices']["market"]%></p>
+                </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+    <%= link_to "Return To Main", root_path, class: "btn_custom" %>
+</div>

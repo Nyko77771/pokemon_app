@@ -1,6 +1,6 @@
   <div class="searchForm">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2 inputSearch" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0 btnSearch" type="submit">Search</button>
-  </form>
+    <%= form_with url: search_path, method: :get, local: true do |f|%>
+      <%= f.text_field :name, class: 'form-control mr-sm-2 inputSearch', placeholder: 'Search' %>
+      <%= f.submit 'Search', class: 'btn btn-outline-success my-2 my-sm-0 btnSearch' %>
+    <% end %>
   </div>

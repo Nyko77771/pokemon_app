@@ -146,3 +146,40 @@
   min-width: 200px;
 }
 }
+
+
+// Return Page
+.searchOut{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  max-height: 600px;
+  min-width: 450px;
+  border: 2px solid red;
+  padding: 5px;
+}
+
+.cardResult {
+  border: 2px solid black;
+  max-height: 580px;
+  min-width: 400px;
+  width: 90%;
+  overflow-x: scroll;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.resultSearch {
+  padding-top: 8px;
+}
+
+.cardValues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchImg {
+  max-height: 180px;
+}

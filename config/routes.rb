@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # My Routes
 root 'home#index'
 get 'about', to: 'home#about'
+get 'search', to: 'home#search'
+get 'result', to: 'home#result'
 
 resources :users
 get 'signup', to: 'users#signup'

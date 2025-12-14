@@ -1,15 +1,15 @@
 <div class="middleBox">
-<h1> View Lists </h1>
+      <h1> View Lists </h1>
+      <h2><%= notice || "" %></h2>
 
-<% unless @lists.empty? %>
-<%= render "lists/show_button" %>
-<% end %>
+      <%= render "lists/create_button" %>
+      
+      <% unless @lists.empty? %>
+            <%= render "lists/show_button" %>
+      <% end %>
 
-<% if @lists.empty? %>
-      <h4> No Lists Found </h4>
-<% end %>
-
-<%= render "lists/create_button" %>
-
+      <% if @lists.empty? %>
+            <h4> No Lists Found </h4>
+      <% end %>
 
 </div>

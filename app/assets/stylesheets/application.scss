@@ -147,15 +147,21 @@
 }
 }
 
+// List
+// _Show
+.listBox {
+  margin-bottom: 8px;
+  border: 5px solid blue;
+}
 
-// Return Page
+// Result Page
 .searchOut{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
   max-height: 600px;
-  min-width: 450px;
+  min-width: 500px;
   border: 2px solid red;
   padding: 5px;
 }
@@ -178,8 +184,82 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .searchImg {
   max-height: 180px;
+}
+
+.resultBtn {
+  margin-bottom: 7px;
+  padding-top: 0;
+}
+
+// Popup
+
+.popupContainer {
+  position: fixed;
+  z-index: 100;
+  height: 300px;
+  width: 200px;
+  padding: 2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(185, 162, 162);
+  border: 5px double black;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.btn_close {
+  border-radius: 15%;
+  border: 2px solid black;
+  margin-top: 7px;
+  background-color: lavender;
+  padding : 8px;
+  text-align: center;
+  font-style: none;
+  text-decoration: none;
+  border-style: none;
+}
+
+// FAQ Page
+
+.faqBox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  height: 550px;
+  width: 90%;
+  text-align: center;
+}
+
+#faqHead {
+  margin-top: 15px;
+}
+
+.questionHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+//Profile Info Code
+#profileInfo {
+  margin-bottom: 8px;
+}
+
+// User Edit
+.editButton {
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_profile {
+  font-weight: 100;
 }

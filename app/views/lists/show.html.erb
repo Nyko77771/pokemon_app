@@ -1,0 +1,26 @@
+<div class="middleBox">
+
+    <% if @list %>
+        <h1><b><%= @list['name'] %></b> List</h1>
+
+        <% if @list.cards_in_list.present? %>
+                <table>
+                    <% @list.cards_in_list.each do |card| %>
+                        <tr>
+                            <th>
+                                <p><%= card['name'] %></p>
+                            </th>
+                        </tr>
+                    <% end %>
+                </table>
+        <% else %>
+    <h3>No Cards in List.</h3>
+            <p><i>Please add some cards to the list.</i></p>
+        <% end %>
+    <% end %>
+
+    <%= link_to "Delete List", list_path(@list), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
+
+    <%= link_to "Back to Lists Page", lists_path, class: "btn_custom" %>
+
+</div>

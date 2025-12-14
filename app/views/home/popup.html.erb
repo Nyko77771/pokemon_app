@@ -1,0 +1,24 @@
+<%= turbo_frame_tag "popup" do%>
+<div class="popupContainer">
+    <% if current_user.lists.present? %>
+        <% for list in current_user.lists %>
+            <div class="popupBox">
+                <h3><%= list.name %></h3>
+                <%= button_to "Add to #{list.name}", add_card_path, method: :post, 
+                params: {
+                    card: {
+                        name: params[:card_name],
+                        image_url: params[:card_image_url],
+                        set_name: params[:card_set_name],
+                        market_price: params[:card_market_price]
+                    },
+                    list_id: list.id
+                }%>
+            </div>
+        <% end %>
+    <% else %>
+        <p>No lists found.</p>
+    <% end %>
+    <%= link_to "Close", result_path, class: "btn_close" %>
+</div>
+<% end %>

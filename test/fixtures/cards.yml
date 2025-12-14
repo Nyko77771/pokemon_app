@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  set_name: MyString
+  card_number: MyString
+  damage: MyString
+  card_text: MyString
+  rarity: MyString
+  image_url: MyString
+  market_price: 1.5
+
+two:
+  name: MyString
+  set_name: MyString
+  card_number: MyString
+  damage: MyString
+  card_text: MyString
+  rarity: MyString
+  image_url: MyString
+  market_price: 1.5

@@ -1,0 +1,16 @@
+<div class="middleBox">
+<h1> Profile Page </h1>
+<h2><%= notice || "" %></h2>
+<p><i> Welcome, <b><%= @user.first_name %> <%= @user.last_name %></b>!</i></p>
+
+<h3 id="profileInfo"> Your Information: </h3>
+<br>
+<br>
+<p><b>First Name:</b> <%= @user.first_name %></p>
+<p><b>Last Name:</b> <%= @user.last_name %></p>
+<p><b>Email:</b> <%= @user.email %></p>
+
+<%= link_to "Update Profile", edit_user_path(@user), class: "btn_custom" %>
+<%= link_to "Delete User", user_path(@user), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
+<%= link_to "Back to Home", root_path, class: "btn_custom" %>
+</div>

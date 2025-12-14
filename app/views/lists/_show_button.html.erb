@@ -5,20 +5,20 @@
 </p>
 
 <div class="collapse collapseShow" id="collapseShow">
-  <div class="card card-body">
+  <div class="card card-body listBox">
   <div class="listForm">
   <table class="tableForm">
     <% @lists.each do |list| %>
       <tr>
-      
-      <td>
-      <p id="listName"><%=  list.name %></p>
-      </td>
+        <td>
+          <p id="listName"><%=  list.name %></p>
+        </td>
 
-      <td>
-        <%= button_to "View List", list_path(list), method: :get, class: "listBtn" %>
-      </>
+        <td>
+          <%= link_to "View List", list_path(list), method: :get, class: "listBtn" %>
+        </td>
       </tr>
+
     <% end %>
   </table>
 </div>

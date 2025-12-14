@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   def index
   end
 
-  def not_found
-    render page_404, status: :not_found
+  def profile
+    @user = current_user
+    render :profile
   end
 
   def about
@@ -27,8 +28,18 @@ class HomeController < ApplicationController
       render :result
     else
       Rails.logger.info("Nothing retrieved")
-      render index, notice: "Nothing found"
+      redirect_to home_index_path, notice: "Nothing found"
     end
+  end
+
+  def add_card
+  end
+
+  def popup
+  end
+
+  def not_found
+    render page_404, status: :not_found
   end
 
 end

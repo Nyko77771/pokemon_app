@@ -7,7 +7,13 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list = current_user.lists.find_by(name: params[:name])
+        @list = current_user.lists.find(params[:id])
+        if @list
+            Rails.logger.info("Found lists: #{@list.inspect}")
+            render :show
+        else
+            redirect_to lists_path, notice: "List not found!"
+        end
     end
 
     def create
@@ -18,10 +24,13 @@ class ListsController < ApplicationController
         puts "Created list: #{@list.name}"
     end
 
-    def delete
-        @list = current_user.lists.find_by(name: params[:name])
+    def destroy
+        @list = current_user.lists.find(params[:id])
         if @list
             @list.destroy
+            redirect_to lists_path, notice: "List deleted successfully."
+        else
+            redirect_to lists_path, notice: "List not found."
         end
     end
 

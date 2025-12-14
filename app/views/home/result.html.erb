@@ -1,5 +1,5 @@
 <div class="middleBox">
-
+<%= turbo_frame_tag "popup"%>
     <div class="searchOut">
 
     <div class="resultSearch">
@@ -17,6 +17,18 @@
                     <h4><%= card['name']%></h4>
                     <p>From Set: <%= card['setName']%> </p>
                     <p><i>Market Price: </i><%= card['prices']["market"]%></p>
+                    <% if current_user %>
+                        <%= link_to "Add to List", popup_path(
+                            card_name: card['name'],
+                            card_set_name: card['setName'],
+                            card_number: card['cardNumber'],
+                            card_damage: card['attacks'][0]['damage'],
+                            card_text: card['text'],
+                            card_type: card['cardType'],
+                            card_image_url: card['imageCdnUrl'],
+                            card_market_price: card['prices']["market"]
+                        ), data: {turbo_frame: "popup"}, class: "resultBtn"%>
+                    <% end %>
                 </div>
             <% end %>
         </div>

@@ -9,9 +9,14 @@ root 'home#index'
 get 'about', to: 'home#about'
 get 'search', to: 'home#search'
 get 'result', to: 'home#result'
+get 'popup', to: 'home#popup'
+post 'add_card', to: 'home#add_card'
+get 'faq', to: 'home#faq'
+get 'profile', to: 'home#profile'
 
 resources :users
 get 'signup', to: 'users#signup'
+get 'edit', to: 'home#edit'
 
 get 'login', to: 'sessions#login'
 post 'login', to: 'sessions#create'

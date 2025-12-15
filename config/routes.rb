@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 # Nykyta McDonald - addition
   # My Routes
+# Routes for Home controller actions
 root 'home#index'
 get 'about', to: 'home#about'
 get 'search', to: 'home#search'
@@ -13,18 +14,22 @@ get 'popup', to: 'home#popup'
 get 'faq', to: 'home#faq'
 get 'profile', to: 'home#profile'
 
+# Routes for User actions
 resources :users
 get 'signup', to: 'users#signup'
 get 'edit', to: 'home#edit'
 
+# Routes for Session actions
 get 'login', to: 'sessions#login'
 post 'login', to: 'sessions#create'
 get 'logout', to: 'sessions#destroy', as: :logout
 
+# Routes for Lists and Cards
 resources :lists, only: [:index, :show, :create, :destroy]
 
 resources :cards, only: [:create, :destroy]
 
+# Route for unknown paths to handle 404 errors
 match '*path', to: 'home#page_404', via: :all
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

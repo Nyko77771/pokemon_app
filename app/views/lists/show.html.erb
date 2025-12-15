@@ -1,26 +1,59 @@
 <div class="middleBox">
 
+    <div class="listViewBox">
     <% if @list %>
-        <h1><b><%= @list['name'] %></b> List</h1>
+        <h1>Your List: <b><%= @list['name'] %></b></h1>
 
         <% if @list.cards_in_list.present? %>
-                <table>
-                    <% @list.cards_in_list.each do |card| %>
-                        <tr>
-                            <th>
-                                <p><%= card.card.name %></p>
-                            </th>
-                        </tr>
-                    <% end %>
-                </table>
+            <div class="tableViewBox">
+                    <table class="tableView">
+                        <% @list.cards_in_list.each do |card| %>
+                            <tr>
+                                <td>
+                                    <%= image_tag card.card.image_url, alt: card.card.name, class: "cardViewImage" %>
+                                </td>
+                                <th>
+                                    <p><%= card.card.name %></p>
+                                </th>
+                                <td>
+                                    <%= card.card.set_name %>
+                                </td>
+                                <td>
+                                    <%= card.card.rarity %>
+                                </td>
+                                <td>
+                                    <% if card.card.card_text.present? %>
+                                        <b>Card Text: <%= card.card.card_text %> </b>
+                                    <% else %>
+                                        <b>Card Text: N/A</b>
+                                    <% end %>
+                                </td>
+                                <td>
+                                    <%= card.card.card_number %>
+                                </td>
+                                <td>
+                                    <%= link_to "Remove from List", card_path(
+                                        card_id: card.card.id, list_id: @list.id
+                                    ) , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn_custom btn_delete_card" %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+            </div>
         <% else %>
     <h3>No Cards in List.</h3>
             <p><i>Please add some cards to the list.</i></p>
         <% end %>
     <% end %>
+    </div>
 
-    <%= link_to "Delete List", list_path(@list), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
-
-    <%= link_to "Back to Lists Page", lists_path, class: "btn_custom" %>
+    <div class="btnView">
+        <%= link_to "Delete List", list_path(@list), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
+    </div>    
+    <div class="btnSpacer">               
+        <%= link_to "Back to Lists Page", lists_path, class: "btn_custom btn_view_back_list" %>
+        <%= link_to "Back to Home", root_path, class: "btn_custom btn_view_back_home" %>
+    </div>
+    
 
 </div>

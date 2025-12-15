@@ -154,6 +154,14 @@
   border: 5px solid blue;
 }
 
+.btn_list_index {
+  margin: 20px;
+}
+
+#collapseCreate {
+  margin-bottom: 10px;
+}
+
 // Result Page
 .searchOut{
   display: flex;
@@ -201,9 +209,9 @@
 .popupContainer {
   position: fixed;
   z-index: 100;
-  height: 200px;
-  max-height: 300px;
-  width: 200px;
+  height: 300px;
+  max-height: 350px;
+  width: 250px;
   padding: 2em;
   left: 50%;
   top: 50%;
@@ -214,6 +222,8 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .btn_close {
@@ -270,8 +280,8 @@
 .flashNotice {
   position: fixed;
   z-index: 100;
-  height: 100px;
-  width: 250px;
+  height: 200px;
+  width: 380px;
   padding: 2em;
   left: 50%;
   top: 50%;
@@ -292,4 +302,47 @@
   margin-bottom: 50px;
   width: 90%;
   text-align: center;
+}
+
+
+// Show List Page
+.cardViewImage {
+  max-height: 100px;
+}
+
+.tableView tr,th, td {
+  text-align: center;
+  border: 4px solid black;
+  padding: 5px;
+}
+
+.listViewBox {
+  max-height: 500px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btnView {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btnSpacer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.btn_view_back_home {
+  margin-left: 5px;
+  border: 2px solid blue;
+}
+
+.btn_view_back_list {
+  margin-right: 5px;
+  border: 2px solid blue;
+}
+
+.btn_delete {
+  border: 2px solid red;
 }

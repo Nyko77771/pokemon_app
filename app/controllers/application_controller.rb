@@ -16,8 +16,7 @@ class ApplicationController < ActionController::Base
   # If they are not then it redirects them to the login page with an alert.
   def require_user
     unless current_user
-      redirect_to '/login', alert: "You must be logged in"
+      redirect_to "/login", alert: "You must be logged in"
     end
   end
-
 end

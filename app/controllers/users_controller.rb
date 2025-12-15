@@ -85,7 +85,7 @@ class UsersController < ApplicationController
     end
     # Used during initial user creation.
     def user_params_and_password_params
-        params.require(:user).permit(:first_name, :last_name, :email,:password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
     # Used for updating password only.
     def password_params

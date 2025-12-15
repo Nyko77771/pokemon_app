@@ -1,11 +1,10 @@
-require 'net/http'
-require 'json'
-require 'timeout'
-require 'singleton'
+require "net/http"
+require "json"
+require "timeout"
+require "singleton"
 
 # My custom client for interacting with the Pokemon Price Tracker API
 class PokemonAPIClient
-
     # Include the Singleton module to ensure a single instance
     include Singleton
 
@@ -33,7 +32,7 @@ class PokemonAPIClient
                 params = {
                     search: name,
                     limit: 3,
-                    includeHistory: 'false'
+                    includeHistory: "false"
                 }
                 # Encode the parameters into the URI
                 uri.query = URI.encode_www_form(params)
@@ -62,18 +61,17 @@ class PokemonAPIClient
                 end
             end
 
-            # Handle timeout errors
+        # Handle timeout errors
         rescue Timeout::Error => e
             puts "Request timed out while fetching card data."
             puts "Error: #{e.message}"
-            return nil
-            # Handle network read timeout errors
-            # This can occur if the server is taking too long to respond
+            nil
+        # Handle network read timeout errors
+        # This can occur if the server is taking too long to respond
         rescue Net::ReadTimeout => e
             puts "Network timeout error occurred while fetching card data."
             puts "Error: #{e.message}"
-            return nil
+            nil
         end
     end
 end
-

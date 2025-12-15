@@ -15,17 +15,16 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:session][:password])
             # Assign user id to session
             session[:user_id] = @user.id
-            redirect_to '/', notice: "Successfully logged in"
+            redirect_to "/", notice: "Successfully logged in"
         else
             redirect_to login_path, notice: "Email or Password are incorrect"
         end
-
     end
 
     # Method to destroy a session
     def destroy
         # Clear user id from session
         session[:user_id] = nil
-        redirect_to '/'
+        redirect_to "/"
     end
 end

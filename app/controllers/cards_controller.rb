@@ -1,6 +1,5 @@
 # Class for managing card-related actions
 class CardsController < ApplicationController
-
     # Method for creating a new card and associating it with a list
     def create
         # Checking the parameters.
@@ -27,7 +26,7 @@ class CardsController < ApplicationController
         CardsInList.where(list_id: params[:list_id], card_id: params[:card_id]).destroy_all
         redirect_to list_path(params[:list_id]), notice: "Card removed from list."
     end
-        
+
 
     # Private method for permitting card parameters
     # Defines the allowed parameters for a card.

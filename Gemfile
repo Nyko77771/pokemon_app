@@ -8,8 +8,9 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem "pg"
 
-#Nykyta McDonald - addition
+# Nykyta McDonald - addition
 # Imported GEMs
 # Using Bootstrap for styling
 gem "bootstrap", "~> 5.3.3"
@@ -23,7 +24,7 @@ gem "dotenv-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
-#Nykyta McDonald - addition
+# Nykyta McDonald - addition
 # Using bcrypt for password hashing
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -44,11 +45,14 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem "debug", platforms: %i[ mri windows ]
+  gem "brakeman"
+  gem "ruby_audit"
+  gem "rubocop"
+  gem "rubocop-rails"
+  gem "bundler-audit"
 
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-
-  gem "brakeman", require: false
-
+  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
 

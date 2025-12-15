@@ -15,5 +15,4 @@ class ListTest < ActiveSupport::TestCase
     list = List.new(name: "Random Name")
     assert_not list.valid?, "list does not have a name"
   end
-
 end

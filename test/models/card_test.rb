@@ -7,7 +7,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no name" do
     card = Card.new(
-      name: "", 
+      name: "",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "text_1",
@@ -20,7 +20,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no set name" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "",
       card_number: "number_1",
       card_text: "text_1",
@@ -33,7 +33,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no card number" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "",
       card_text: "text_1",
@@ -46,7 +46,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no text field set" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "",
@@ -59,7 +59,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card missing rarity" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "text_1",
@@ -72,7 +72,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no price" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "text_1",
@@ -85,7 +85,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has no image URL" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "text_1",
@@ -98,7 +98,7 @@ class CardTest < ActiveSupport::TestCase
 
   test "Card has all the parameters" do
     card = Card.new(
-      name: "card_1", 
+      name: "card_1",
       set_name: "set_1",
       card_number: "number_1",
       card_text: "text_1",
@@ -108,5 +108,4 @@ class CardTest < ActiveSupport::TestCase
     )
     assert_not card.valid?, "Valid: Card has all the fields given"
   end
-
 end

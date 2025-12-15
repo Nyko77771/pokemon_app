@@ -56,6 +56,4 @@ class UserTest < ActiveSupport::TestCase
 
     assert user.valid?, "User is unique"
   end
-
-
 end

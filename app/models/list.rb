@@ -5,6 +5,6 @@ class List < ApplicationRecord
   has_many :cards_in_list, dependent: :destroy
   has_many :cards, through: :cards_in_list
 
-  #Validation
+  # Validation
   validates :name, presence: true
 end

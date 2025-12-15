@@ -1,0 +1,348 @@
+@import "bootstrap";
+
+*{
+  max-height: 100vh;
+}
+
+#signUp {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.middleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.subForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actions input {
+  border-radius: 20px;
+  border-style: none;
+  margin-top: 10px;
+  font-size: large;
+  background-color: lavender;
+  padding : 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn_custom {
+  background-color: lavender;
+  padding : 8px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-style: none;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.logSign {
+  margin-right: 20px;
+  font-size: smaller;
+}
+
+.logText:hover{
+  color: white;
+}
+
+.nav-link.logText {
+  color: blue;
+}
+
+.notices {
+  color: red;
+}
+
+.titleHead {
+  font-size: larger;
+  color: rgb(238, 108, 108);
+}
+
+.titleHead:hover {
+  color: white;
+}
+
+.tableForm {
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableForm tr {
+  vertical-align: middle;
+}
+
+
+.tableForm td {
+  text-align: center;
+  margin: 0;
+}
+
+#listName {
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.listBtn {
+  border: none;
+}
+
+
+.searchForm  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.inputSearch {
+  margin-bottom: 8px;
+  border: 2px solid green;
+}
+
+.btn404 {
+  border: 2px dotted blue;
+}
+
+.btn404:hover {
+  border: 2px solid green;
+  background-color: azure;
+}
+
+.btn_signup {
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-link.logText {
+  padding-left: 15px;
+}
+.inputSearch {
+  min-width: 500px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+.inputSearch {
+  min-width: 200px;
+}
+}
+
+// List
+// _Show
+.listBox {
+  margin-bottom: 8px;
+  border: 5px solid blue;
+}
+
+.btn_list_index {
+  margin: 20px;
+}
+
+#collapseCreate {
+  margin-bottom: 10px;
+}
+
+// Result Page
+.searchOut{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  max-height: 600px;
+  min-width: 500px;
+  border: 2px solid red;
+  padding: 5px;
+}
+
+.cardResult {
+  border: 2px solid black;
+  max-height: 580px;
+  min-width: 400px;
+  width: 90%;
+  overflow-x: scroll;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.resultSearch {
+  padding-top: 8px;
+}
+
+.cardValues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.searchImg {
+  max-height: 180px;
+}
+
+.resultBtn {
+  margin-bottom: 7px;
+  padding-top: 0;
+}
+
+// Popup
+
+.popupContainer {
+  position: fixed;
+  z-index: 100;
+  height: 300px;
+  max-height: 350px;
+  width: 250px;
+  padding: 2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(185, 162, 162);
+  border: 5px double black;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.btn_close {
+  border-radius: 15%;
+  border: 2px solid black;
+  margin-top: 7px;
+  background-color: lavender;
+  padding : 8px;
+  text-align: center;
+  font-style: none;
+  text-decoration: none;
+  border-style: none;
+}
+
+// FAQ Page
+
+.faqBox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  height: 550px;
+  width: 90%;
+  text-align: center;
+}
+
+#faqHead {
+  margin-top: 15px;
+}
+
+.questionHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+//Profile Info Code
+#profileInfo {
+  margin-bottom: 8px;
+}
+
+// User Edit
+.editButton {
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_profile {
+  font-weight: 100;
+}
+
+// Notice
+
+.flashNotice {
+  position: fixed;
+  z-index: 100;
+  height: 200px;
+  width: 380px;
+  padding: 2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(185, 162, 162);
+  border: 5px double black;
+  text-align: center;
+}
+
+// About Page
+
+.aboutImageDiv {
+  margin-top: 80px;
+}
+
+.aboutText {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 90%;
+  text-align: center;
+}
+
+
+// Show List Page
+.cardViewImage {
+  max-height: 100px;
+}
+
+.tableView tr,th, td {
+  text-align: center;
+  border: 4px solid black;
+  padding: 5px;
+}
+
+.listViewBox {
+  max-height: 500px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btnView {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btnSpacer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.btn_view_back_home {
+  margin-left: 5px;
+  border: 2px solid blue;
+}
+
+.btn_view_back_list {
+  margin-right: 5px;
+  border: 2px solid blue;
+}
+
+.btn_delete {
+  border: 2px solid red;
+}

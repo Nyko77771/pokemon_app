@@ -1,0 +1,39 @@
+<!-- SIgnup Page -->
+<!-- Used for new user registration -->
+<!-- Renders a form for user to input their details and create an account -->
+<!-- Form_for used to send the form to @user model -->
+<!-- Creates new user model instance in the controller -->
+
+<div class="middleBox">
+  <h1 id="signUp">Sign Up</h1>
+
+  <%= form_for(@user) do |f| %>
+    <div class="subForm">
+      <div class="field">
+        <%=f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+
+      <div class="field">
+        <%=f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+
+      <div class="field">
+        <%=f.email_field :email, placeholder: "Email" %>
+      </div>
+
+      <div class="field">
+        <%=f.password_field :password, placeholder: "Password" %>
+      </div>
+
+      <div class="actions">
+
+        <%= link_to "Have Account", login_path, class: "btn_signup" %>
+
+        <%= f.submit "Create Account" %>
+
+        <%= link_to "Cancel", root_path, class: "btn_custom" %>
+      </div>
+
+    </div>
+</div>
+<% end %>

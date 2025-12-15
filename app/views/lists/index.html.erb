@@ -1,0 +1,22 @@
+<!-- Main index page for List Pages -->
+<!-- Displays options to create a new list or view existing lists -->
+<div class="middleBox">
+      <h1> View Lists </h1>
+      <h2><%= notice || "" %></h2>
+
+      <!-- Render button to create a new list -->
+      <%= render "lists/create_button" %>
+      
+      <!-- Shows existing lists if any are present -->
+      <!-- If none are present then display a message indicating no lists found -->
+      <% unless @lists.empty? %>
+            <%= render "lists/show_button" %>
+      <% end %>
+
+      <% if @lists.empty? %>
+            <h4> No Lists Found </h4>
+      <% end %>
+
+      <%= link_to "Back to Home", root_path, class: "btn_custom btn_list_index" %>
+
+</div>

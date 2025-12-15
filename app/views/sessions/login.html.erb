@@ -1,0 +1,21 @@
+<!-- Login Form -->
+<!-- Establishes a form for user login with email and password fields, along with links for signing up and canceling. -->
+<!-- Form for session creation, posting to the login path. -->
+<%= form_for(:session, url: login_path) do |f| %>
+    <div class="middleBox">
+    <h1>Login</h1>
+
+    <!-- Used to display notices / alerts -->
+    <% if notice %>
+        <p class="notices"><%= notice %></p>
+    <% end %>
+
+    <div class="subForm">
+    <%= f.email_field :email, :placeholder => "Email" %>
+    <%= f.password_field :password, :placeholder => "Password" %>
+    <%= link_to "No Account", signup_path, class: "btn_signup" %>
+    <%= f.submit "Login", class: "btn-submit btn_custom" %>
+    <%= link_to "Cancel", root_path, class: "btn_custom" %>
+    </div>
+    </div>
+<% end %>

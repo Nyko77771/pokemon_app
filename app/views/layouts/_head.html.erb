@@ -1,0 +1,53 @@
+<!-- Navigation Bar Partial -->
+<!-- Uses Bootsrap for styling and responsiveness -->
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary border-bottom " data-bs-theme="dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand">
+        <%= link_to "Poke Tracker", home_index_path, class: "nav-link titleHead", "aria-current": "page" %>
+    
+    </a>
+
+    <span class="navbar-text ms-auto logSign">
+      <% unless current_page?(login_path) %>
+        <% if current_user%>
+          <%= link_to "Log-out", logout_path, method: :delete, class: "nav-link logText" %>
+           <% else %>
+          <%= link_to "Log-in", login_path, class: "nav-link logText" %>
+        <% end %>
+      <% end %>
+    </span>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+        <%= link_to "Home", home_index_path, class: "nav-link", "aria-current": "page" %>
+        </li>
+
+        <% if current_user %>
+        <%= link_to "Profile", profile_path, class: "nav-link", "aria-current": "page" %>
+        <% end %>
+
+        <% if current_user.nil? %>
+        <%= link_to "Signup", signup_path, class: "nav-link", "aria-current": "page" %>
+        <% end %>
+
+        <% if current_user %>
+        <%= link_to "List", lists_path, class: "nav-link", "aria-current": "page" %>
+          <% end %>
+
+        <li class="nav-item">
+        <%= link_to "About", about_path, class: "nav-link", "aria-current": "page" %>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,33 @@
+<!-- Custom Popup for Adding Cards to User Lists -->
+<%= turbo_frame_tag "popup" do%>
+
+    <div class="popupContainer">
+        <% if current_user.lists.present? %>
+            <% for list in current_user.lists %>
+                <div class="popupBox">
+                    <h3><%= list.name %></h3>
+                    <!-- Button to add the card to the specific list -->
+                    <!-- Adding parameters to identify the card being added -->
+                    <!-- These are passed from the Result page -->
+                    <%= button_to "Add to #{list.name}", cards_path(list), method: :post, 
+                    params: {
+                        card: {
+                            name: params[:card_name],
+                            set_name: params[:card_set_name],
+                            card_number: params[:card_number],
+                            card_text: params[:card_text],
+                            rarity: params[:card_rarity],
+                            image_url: params[:card_image_url],
+                            market_price: params[:card_market_price]
+                        },
+                        list_id: list.id
+                    }%>
+                </div>
+            <% end %>
+        <% else %>
+            <p>No lists found.</p>
+        <% end %>
+        <%= link_to "Close", result_path, class: "btn_close" %>
+    </div>
+
+<% end %>

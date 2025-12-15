@@ -5,6 +5,7 @@ require 'json'
 require 'timeout'
 require 'singleton'
 
+module MyApiGem
 # My custom client for interacting with the Pokemon Price Tracker API
 class PokemonAPIClient
   # Include the Singleton module to ensure a single instance
@@ -76,4 +77,5 @@ class PokemonAPIClient
       nil
     end
   end
+end
 end

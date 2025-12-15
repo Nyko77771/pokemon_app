@@ -27,14 +27,14 @@ class HomeController < ApplicationController
     # Fetching API key from environment variables
     api = ENV['PRICE_TRACKER_API']
     # Configuring the custom Pokemon API client with the API key
-    PokemonAPIClient.configure(api)
+    MyApiGem::PokemonAPIClient.configure(api)
     # Checking if the name parameter is blank
     if params[:name].blank?
       redirect_to home_index_path, notice: 'No Pokemon Name Given. Please Enter a Name'
       return
     end
     # Fetching Pokemon card data by name form the custom Pokemon gem (found in lib directory)
-    @pokemon = PokemonAPIClient.fetch_card_by_name(params[:name])
+    @pokemon = MyApiGem::PokemonAPIClient.fetch_card_by_name(params[:name])
     # Storing the retrieved cards in an instance variable
     @cards = @pokemon['data']
     if @cards.present?

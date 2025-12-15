@@ -1,7 +1,9 @@
-require_relative "boot"
-require_relative "../lib/my_api_gem/pokemon_price_tracker.rb"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+require_relative '../lib/my_api_gem/pokemon_price_tracker'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

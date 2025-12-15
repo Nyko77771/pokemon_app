@@ -1,4 +1,5 @@
+# frozen_string_literal: true
 
-Rails.application.config.assets.version = "1.0"
+Rails.application.config.assets.version = '1.0'
 
-Rails.application.config.assets.precompile += %w[ bootstrap.js popper.js]
+Rails.application.config.assets.precompile += %w[bootstrap.js popper.js]

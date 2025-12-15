@@ -1,7 +1,11 @@
+<!-- Login Form -->
+<!-- Establishes a form for user login with email and password fields, along with links for signing up and canceling. -->
+<!-- Form for session creation, posting to the login path. -->
 <%= form_for(:session, url: login_path) do |f| %>
     <div class="middleBox">
     <h1>Login</h1>
 
+    <!-- Used to display notices / alerts -->
     <% if notice %>
         <p class="notices"><%= notice %></p>
     <% end %>

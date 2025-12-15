@@ -1,9 +1,14 @@
 require 'net/http'
 require 'json'
 require 'timeout'
+require 'singleton'
 
 # My custom client for interacting with the Pokemon Price Tracker API
 class PokemonAPIClient
+
+    # Include the Singleton module to ensure a single instance
+    include Singleton
+
     # URL for the Pokemon Price Tracker API
     BASE_URL = "https://www.pokemonpricetracker.com/api/v2/cards"
 

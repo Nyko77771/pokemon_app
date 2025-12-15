@@ -4,7 +4,6 @@ one:
   name: MyString
   set_name: MyString
   card_number: MyString
-  damage: MyString
   card_text: MyString
   rarity: MyString
   image_url: MyString
@@ -14,7 +13,6 @@ two:
   name: MyString
   set_name: MyString
   card_number: MyString
-  damage: MyString
   card_text: MyString
   rarity: MyString
   image_url: MyString

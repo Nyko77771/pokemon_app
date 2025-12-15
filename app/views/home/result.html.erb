@@ -1,7 +1,9 @@
+<!-- Result Page for Search Results -->
 <div class="middleBox">
 
-
+<!-- Turbo Frame for popup window -->
 <%= turbo_frame_tag "popup"%>
+
     <div class="searchOut">
 
     <div class="resultSearch">
@@ -13,13 +15,16 @@
 
         <% if @cards.present? %>
         
+        <!-- Display each card in the search results -->
             <% @cards.each do |card| %>
                 <div class="cardValues">
                     <img src="<%= card['imageCdnUrl'] %>" class="searchImg">
                     <h4><%= card['name']%></h4>
                     <p>From Set: <%= card['setName']%> </p>
                     <p><i>Market Price: </i><%= card['prices']["market"]%></p>
+                    <!-- Adding "Add" button if user is logged in -->
                     <% if current_user %>
+                    <!-- Link to add card to user's list with card details as parameters -->
                         <%= link_to "Add to List", popup_path(
                             card_name: card['name'],
                             card_set_name: card['setName'],

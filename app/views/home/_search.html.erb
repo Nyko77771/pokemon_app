@@ -1,5 +1,7 @@
-  <div class="searchForm">
-    <%= form_with url: search_path, method: :get, local: true do |f|%>
+ <!-- A Partial for Search Form -->
+ <div class="searchForm">
+ <!-- Using form_with helper to create a search form -->
+    <%= form_with url: search_path, method: :get do |f|%>
       <%= f.text_field :name, class: 'form-control mr-sm-2 inputSearch', placeholder: 'Search' %>
       <%= f.submit 'Search', class: 'btn btn-outline-success my-2 my-sm-0 btnSearch' %>
     <% end %>

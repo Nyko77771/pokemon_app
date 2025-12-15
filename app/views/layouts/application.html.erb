@@ -1,3 +1,4 @@
+<!-- The main application layout for the Pokemon App -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,10 +15,14 @@
   </head>
 
   <body>
+  <!-- Adds a Turbo Frame for popups -->
   <%= turbo_frame_tag "popup" %>
-  <%= yield :head %>
+  <!-- Inserts head content -->
   <%= render "layouts/head" %>
+  <!-- Main content yield -->
+  <!-- Thhis is where the content of each view will be rendered -->
     <%= yield %>
+  <!-- Inserts footer content -->
   <%= render "layouts/footer" %>
   </body>
 </html>

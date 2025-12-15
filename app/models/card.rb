@@ -5,7 +5,5 @@ class Card < ApplicationRecord
     has_many :lists, through: :cards_in_list
 
     # Validations for testing purposes
-    validates :image_url, presence: true
-    validates :name, presence: true
-    validates :name, presence: true
+    validates :name, :set_name, :card_number, :card_text, :rarity, :market_price, :image_url, presence: true
 end

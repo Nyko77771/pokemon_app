@@ -1,3 +1,5 @@
+<!-- Partial for displaying a button that toggles the visibility of a list of lists -->
+<!-- Uses Bootstrap's collapse component for the toggle functionality -->
 <p>
   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShow" aria-expanded="false" aria-controls="collapseShow">
     Show Lists
@@ -8,6 +10,7 @@
   <div class="card card-body listBox">
   <div class="listForm">
   <table class="tableForm">
+  <!-- If list is found then display each list with a link to view it -->
     <% @lists.each do |list| %>
       <tr>
         <td>

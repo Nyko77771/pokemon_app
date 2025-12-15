@@ -1,3 +1,7 @@
+<!-- List Page that displays the list and its cards -->
+<!-- Card details include image, name, set name, rarity, card text, and card number -->
+<!-- Also includes a delete utton for each card-->
+<!-- The List itself can also be deleted here -->
 <div class="middleBox">
 
     <div class="listViewBox">
@@ -32,6 +36,8 @@
                                     <%= card.card.card_number %>
                                 </td>
                                 <td>
+                                <!-- Delete button for each card in the list link -->
+                                <!-- Shown as a button with confirmation prompt -->
                                     <%= link_to "Remove from List", card_path(
                                         card_id: card.card.id, list_id: @list.id
                                     ) , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn_custom btn_delete_card" %>
@@ -47,10 +53,12 @@
     <% end %>
     </div>
 
+    <!-- Delete List Button -->
     <div class="btnView">
         <%= link_to "Delete List", list_path(@list), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
     </div>    
-    <div class="btnSpacer">               
+    <div class="btnSpacer">
+    <!-- Navigation Buttons -->              
         <%= link_to "Back to Lists Page", lists_path, class: "btn_custom btn_view_back_list" %>
         <%= link_to "Back to Home", root_path, class: "btn_custom btn_view_back_home" %>
     </div>

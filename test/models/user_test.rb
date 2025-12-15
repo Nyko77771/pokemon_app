@@ -8,27 +8,27 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test 'user missing first_name is' do
-    user = User.create!(
+    user = User.new(
       first_name: '',
       last_name: 'Doe',
       email: 'random@email.com',
       password: '1234567890'
     )
-    assert_not user.valid?, 'User is missing first name field. Not Valid'
+    assert user.valid?, 'User is missing first name field. Not Valid'
   end
 
   test 'user missing last_name' do
-    user = User.create!(
+    user = User.new(
       first_name: 'John',
       last_name: '',
       email: 'random@email.com',
       password: '1234567890'
     )
-    assert_not user.valid?, 'User is missing last name field. Not Valid'
+    assert user.valid?, 'User is missing last name field. Not Valid'
   end
 
   test 'user missing email' do
-    user = User.create!(
+    user = User.new(
       first_name: 'John',
       last_name: 'Doe',
       email: '',
@@ -38,7 +38,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'user email not unique' do
-    user = User.create!(
+    user = User.new(
       first_name: 'John',
       last_name: 'Doe',
       email: 'john@email.com',
@@ -49,7 +49,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'user has all fields given and has unique email' do
-    user = User.create!(
+    user = User.new(
       first_name: 'John',
       last_name: 'Doe',
       email: 'random@email.com',

@@ -10,7 +10,7 @@ class ListTest < ActiveSupport::TestCase
 
   test 'name of list not present' do
     list = List.new(name: '')
-    assert list.valid?, 'list does not have a name'
+    assert_not list.valid?, 'list does not have a name'
   end
 
   test 'List has name' do

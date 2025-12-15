@@ -17,7 +17,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card is missing name field'
+    assert_not card.valid?, 'Invalid: Card is missing name field'
   end
 
   test 'Card has no set name' do
@@ -30,7 +30,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card is missing set_name field'
+    assert_not card.valid?, 'Invalid: Card is missing set_name field'
   end
 
   test 'Card has no card number' do
@@ -43,7 +43,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card is missing snumber for the card'
+    assert_not card.valid?, 'Invalid: Card is missing snumber for the card'
   end
 
   test 'Card has no text field set' do
@@ -56,7 +56,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card is missing text field'
+    assert_not card.valid?, 'Invalid: Card is missing text field'
   end
 
   test 'Card missing rarity' do
@@ -69,7 +69,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card has no rarity'
+    assert_not card.valid?, 'Invalid: Card has no rarity'
   end
 
   test 'Card has no price' do
@@ -82,7 +82,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '',
       image_url: 'https://randomsite.com'
     )
-    assert card.valid?, 'Invalid: Card is missing price field'
+    assert_not card.valid?, 'Invalid: Card is missing price field'
   end
 
   test 'Card has no image URL' do
@@ -95,7 +95,7 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: ''
     )
-    assert card.valid?, 'Invalid: Card is missing image link'
+    assert_not card.valid?, 'Invalid: Card is missing image link'
   end
 
   test 'Card has all the parameters' do
@@ -108,6 +108,6 @@ class CardTest < ActiveSupport::TestCase
       market_price: '1.1',
       image_url: 'https://randomsite.com'
     )
-    assert_not card.valid?, 'Valid: Card has all the fields given'
+    assert card.valid?, 'Valid: Card has all the fields given'
   end
 end

@@ -7,7 +7,7 @@ require 'singleton'
 
 module MyApiGem
 # My custom client for interacting with the Pokemon Price Tracker API
-class PokemonAPIClient
+class PokemonPriceTracker
   # Include the Singleton module to ensure a single instance
   include Singleton
 

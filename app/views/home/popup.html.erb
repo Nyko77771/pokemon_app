@@ -1,24 +1,36 @@
 <%= turbo_frame_tag "popup" do%>
-<div class="popupContainer">
-    <% if current_user.lists.present? %>
-        <% for list in current_user.lists %>
-            <div class="popupBox">
-                <h3><%= list.name %></h3>
-                <%= button_to "Add to #{list.name}", add_card_path, method: :post, 
-                params: {
-                    card: {
-                        name: params[:card_name],
-                        image_url: params[:card_image_url],
-                        set_name: params[:card_set_name],
-                        market_price: params[:card_market_price]
-                    },
-                    list_id: list.id
-                }%>
-            </div>
-        <% end %>
+    <% if notice %>
+    <div>
+        <h4 class="notices"><%= notice || "" %></h4>
+    </div>
     <% else %>
-        <p>No lists found.</p>
+
+        <div class="popupContainer">
+            <% if current_user.lists.present? %>
+                <% for list in current_user.lists %>
+                    <div class="popupBox">
+                        <h3><%= list.name %></h3>
+                        <%= button_to "Add to #{list.name}", cards_path(list), method: :post, 
+                        params: {
+                            card: {
+                                name: params[:card_name],
+                                set_name: params[:card_set_name],
+                                card_number: params[:card_number],
+                                card_text: params[:card_text],
+                                rarity: params[:card_rarity],
+                                image_url: params[:card_image_url],
+                                market_price: params[:card_market_price]
+                            },
+                            list_id: list.id
+                        }%>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>No lists found.</p>
+            <% end %>
+            <%= link_to "Close", result_path, class: "btn_close" %>
+        </div>
+
     <% end %>
-    <%= link_to "Close", result_path, class: "btn_close" %>
-</div>
+
 <% end %>

@@ -20,7 +20,10 @@ class HomeController < ApplicationController
   def search
     api = ENV["PRICE_TRACKER_API"]
     PokemonAPIClient.configure(api);
-
+    if params[:name].blank?
+      redirect_to home_index_path, notice: "No Pokemon Name Given. Please Enter a Name"
+      return
+    end
     @pokemon = PokemonAPIClient.fetch_card_by_name(params[:name])
     @cards = @pokemon['data']
     if @cards.present?

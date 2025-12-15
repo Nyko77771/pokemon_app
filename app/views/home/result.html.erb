@@ -1,9 +1,15 @@
 <div class="middleBox">
+
+
 <%= turbo_frame_tag "popup"%>
     <div class="searchOut">
 
     <div class="resultSearch">
         <%= render 'home/search' %>
+    </div>
+
+    <div>
+        <h4 class="notices"><%= notice || "" %></h4>
     </div>
 
     <div class="cardResult">
@@ -22,9 +28,8 @@
                             card_name: card['name'],
                             card_set_name: card['setName'],
                             card_number: card['cardNumber'],
-                            card_damage: card['attacks'][0]['damage'],
                             card_text: card['text'],
-                            card_type: card['cardType'],
+                            card_rarity: card['rarity'],
                             card_image_url: card['imageCdnUrl'],
                             card_market_price: card['prices']["market"]
                         ), data: {turbo_frame: "popup"}, class: "resultBtn"%>

@@ -1,0 +1,8 @@
+<% if flash["notice"] %>
+  <div class="flashNotice">
+    <p><%= flash["notice"] %></p>
+  </div>
+  <button type="button" class="close" data-dismiss="flashNotice" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+<% end %>

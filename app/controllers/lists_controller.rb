@@ -9,7 +9,6 @@ class ListsController < ApplicationController
     def show
         @list = current_user.lists.find(params[:id])
         if @list
-            Rails.logger.info("Found lists: #{@list.inspect}")
             render :show
         else
             redirect_to lists_path, notice: "List not found!"

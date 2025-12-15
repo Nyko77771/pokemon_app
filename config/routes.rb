@@ -10,7 +10,6 @@ get 'about', to: 'home#about'
 get 'search', to: 'home#search'
 get 'result', to: 'home#result'
 get 'popup', to: 'home#popup'
-post 'add_card', to: 'home#add_card'
 get 'faq', to: 'home#faq'
 get 'profile', to: 'home#profile'
 
@@ -23,6 +22,8 @@ post 'login', to: 'sessions#create'
 get 'logout', to: 'sessions#destroy', as: :logout
 
 resources :lists, only: [:index, :show, :create, :destroy]
+
+resources :cards, only: [:create, :destroy]
 
 match '*path', to: 'home#page_404', via: :all
 

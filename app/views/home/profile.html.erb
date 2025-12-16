@@ -11,7 +11,9 @@
 <p><b>Last Name:</b> <%= @user.last_name %></p>
 <p><b>Email:</b> <%= @user.email %></p>
 
-<%= link_to "Update Profile", edit_user_path(@user), class: "btn_custom" %>
+<div class="btnSpacer">
+    <%= link_to "Update Profile", edit_user_path(@user), class: "btn_custom" %>
+    <%= link_to "Back to Home", root_path, class: "btn_custom" %>
+</div>
 <%= link_to "Delete User", user_path(@user), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn_custom btn_delete" %>
-<%= link_to "Back to Home", root_path, class: "btn_custom" %>
 </div>

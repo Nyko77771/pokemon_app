@@ -9,6 +9,7 @@ class CardsController < ApplicationController
 
     # Finding the list by id.
     @list = List.find(params[:list_id])
+    Rails.logger.debug "----LIST---- #{@list.inspect}"
     # Creating a new card with the provided parameters.
     @card = Card.new(card_params)
     if @card.save

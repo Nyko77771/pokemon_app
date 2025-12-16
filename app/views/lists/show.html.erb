@@ -6,40 +6,40 @@
 
     <div class="listViewBox">
     <% if @list %>
-        <h1>Your List: <b><%= @list['name'] %></b></h1>
+        <h1>Your List: <b><%= @list.name %></b></h1>
 
         <% if @list.cards_in_list.present? %>
             <div class="tableViewBox">
                     <table class="tableView">
-                        <% @list.cards_in_list.each do |card| %>
+                        <% @list.cards_in_list.each do |c| %>
                             <tr>
                                 <td>
-                                    <%= image_tag card.card.image_url, alt: card.card.name, class: "cardViewImage" %>
+                                    <%= image_tag c.card.image_url, alt: c.card.name, class: "cardViewImage" %>
                                 </td>
                                 <th>
-                                    <p><%= card.card.name %></p>
+                                    <p><%= c.card.name %></p>
                                 </th>
                                 <td>
-                                    <%= card.card.set_name %>
+                                    <%= c.card.set_name %>
                                 </td>
                                 <td>
-                                    <%= card.card.rarity %>
+                                    <%= c.card.rarity %>
                                 </td>
                                 <td>
-                                    <% if card.card.card_text.present? %>
-                                        <b>Card Text: <%= card.card.card_text %> </b>
+                                    <% if c.card.card_text.present? %>
+                                        <b>Card Text: <%= c.card.card_text %> </b>
                                     <% else %>
                                         <b>Card Text: N/A</b>
                                     <% end %>
                                 </td>
                                 <td>
-                                    <%= card.card.card_number %>
+                                    <%= c.card.card_number %>
                                 </td>
                                 <td>
                                 <!-- Delete button for each card in the list link -->
                                 <!-- Shown as a button with confirmation prompt -->
                                     <%= link_to "Remove from List", card_path(
-                                        card_id: card.card.id, list_id: @list.id
+                                        card_id: c.card.id, list_id: @list.id
                                     ) , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn_custom btn_delete_card" %>
                                 </td>
                             </tr>

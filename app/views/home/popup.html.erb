@@ -9,7 +9,7 @@
                     <!-- Button to add the card to the specific list -->
                     <!-- Adding parameters to identify the card being added -->
                     <!-- These are passed from the Result page -->
-                    <%= button_to "Add to #{list.name}", cards_path(list), method: :post, 
+                    <%= button_to "Add to #{list.name}", cards_path(), method: :post, 
                     params: {
                         card: {
                             name: params[:card_name],

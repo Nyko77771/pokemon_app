@@ -27,9 +27,9 @@
                     <!-- Link to add card to user's list with card details as parameters -->
                         <%= link_to "Add to List", popup_path(
                             card_name: card['name'],
-                            card_set_name: card['setName'],
-                            card_number: card['cardNumber'],
-                            card_text: card['text'],
+                            card_set_name: card['setName'] || "N/A",
+                            card_number: card['cardNumber'] || "N/A",
+                            card_text: card['text'] || "N/A",
                             card_rarity: card['rarity'],
                             card_image_url: card['imageCdnUrl'],
                             card_market_price: card['prices']["market"]

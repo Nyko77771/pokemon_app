@@ -392,6 +392,10 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webdrivers (5.2.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (~> 4.0)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
@@ -434,7 +438,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   ruby_audit
   sassc-rails
-  selenium-webdriver
+  selenium-webdriver (~> 4.39)
   solid_cable
   solid_cache
   solid_queue
@@ -444,6 +448,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  webdrivers (~> 5.0)
 
 BUNDLED WITH
    2.7.2
